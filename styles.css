@@ -1,0 +1,419 @@
+/* ======================== Reset & Base ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #0a1e46;
+    --secundaria: #5c2ea7;
+    --escuro: #0d0d0d;
+    --maisEscuro: #061129;
+    --claro: #ffffff;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--maisEscuro);
+    color: var(--claro);
+}
+
+/* ======================== Navegação ======================== */
+.navegacao {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, .8);
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-link {
+    position: relative;
+    padding: .5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--claro);
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secundaria), var(--claro));
+    transition: .3s;
+}
+
+.menu-link:hover::after,
+.menu-link:focus::after {
+    width: 100%;
+    outline: none;
+}
+
+/* ======================== Cabeçalho ======================== */
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    box-shadow: 0 0 20px rgba(79, 70, 229, .3);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--claro);
+}
+
+h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cabecalho-subtitulo {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ======================== Sobre ======================== */
+.sobre-mim {
+    padding: 6rem 2rem;
+}
+
+.sobre-caixa {
+    max-width: 800px;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: var(--vidro);
+}
+
+.sobre-paragrafo {
+    max-width: 70ch;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+/* ======================== Skills ======================== */
+.skills {
+    padding: 1rem 2rem;
+}
+
+.skills-grupo {
+    margin-bottom: 3.5rem;
+}
+
+.skills-categoria {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--claro);
+    opacity: 0.85;
+    border-left: 4px solid var(--secundaria);
+    padding-left: 12px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    padding: 1.4rem;
+    border-radius: 14px;
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 18px rgba(92, 46, 167, .4);
+}
+
+.skill-card img {
+    width: 42px;
+    height: 42px;
+    margin-bottom: .8rem;
+}
+
+.skill-card span {
+    display: block;
+    font-size: 1rem;
+    color: var(--claro);
+    font-weight: 500;
+    opacity: .9;
+}
+
+/* ======================== Projetos ======================== */
+/* ======================== Projetos Profissionais ======================== */
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projetos-card:hover {
+    transform: translateY(-10px) rotateX(3deg);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.projeto-imagem-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.projetos-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.projetos-card:hover .projetos-imagem {
+    transform: scale(1.05);
+}
+
+.selo-curso {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #3c47e7;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.icone-pdf {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #3c47e7;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.icone-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #3c8ce7;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.caixa-textos-projetos {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-projeto {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.paragrafo-projetos {
+    color: rgba(226, 232, 240, 0.8);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.botao-projeto {
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--claro);
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao-projeto:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* ======================== Contato ======================== */
+.contatos {
+    padding: 6rem 2rem;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--vidro);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--vidro);
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+}
+
+.campo-form:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px var(--secundaria);
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    transition: .5s ease;
+}
+
+.botao-enviar:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, .3);
+}
+
+/* ======================== Fundo Partículas ======================== */
+.particulas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: .5;
+    background: radial-gradient(circle at 10% 10%, var(--secundaria)0%, transparent 30%), radial-gradient(circle at 90% 90%, var(--secundaria)0%, transparent 30%), var(--maisEscuro);
+    animation: pulseParticles 4s ease-in-out infinite;
+}
+
+@keyframes pulseParticles {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.35);
+    }
+}
+
+/* ======================== Reduz Movimento ======================== */
+@media(prefers-reduced-motion:reduce) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* ======================== SR-ONLY ======================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* ======================== Links ======================== */
+a {
+    color: inherit;       /* Herda a cor do texto ao redor */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus, a:active {
+    color: inherit;       /* Mantém a cor ao passar o mouse ou clicar */
+    text-decoration: none; /* Sem sublinhado */
+    outline: none;        /* Remove contorno azul no clique (opcional) */
+}
+
