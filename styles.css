@@ -120,7 +120,7 @@ h2 {
 
 /* ======================== Sobre ======================== */
 .sobre-mim {
-    padding: 6rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .sobre-caixa {
@@ -416,5 +416,77 @@ a:hover, a:focus, a:active {
     color: inherit;       /* Mantém a cor ao passar o mouse ou clicar */
     text-decoration: none; /* Sem sublinhado */
     outline: none;        /* Remove contorno azul no clique (opcional) */
+}
+/* ======================== MOBILE ======================== */
+@media (max-width: 768px) {
+
+    /* Navegação */
+    .menu {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        font-size: 0.95rem;
+    }
+
+    .navegacao {
+        padding: 1rem;
+    }
+
+    /* Cabeçalho */
+    .cabecalho {
+        padding-top: 6rem;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+    }
+
+    .cabecalho-subtitulo {
+        font-size: 1rem;
+    }
+
+    /* Sobre */
+    .sobre-paragrafo {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .skill-card {
+        padding: 1rem;
+    }
+
+    /* Projetos */
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .projetos-card:hover {
+        transform: none;
+    }
+
+    /* Contato */
+    .contatos {
+        padding: 4rem 1rem;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem;
+    }
 }
 
