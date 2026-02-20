@@ -422,12 +422,12 @@ a:hover, a:focus, a:active {
 
     /* Navegação */
     .menu {
-        gap: 1.2rem;
+        gap: 1rem;
         flex-wrap: wrap;
     }
 
     .menu-link {
-        font-size: 0.95rem;
+        font-size: 1.2rem;
     }
 
     .navegacao {
@@ -436,7 +436,7 @@ a:hover, a:focus, a:active {
 
     /* Cabeçalho */
     .cabecalho {
-        padding-top: 6rem;
+        padding-top: 3rem;
         text-align: center;
     }
 
@@ -456,7 +456,7 @@ a:hover, a:focus, a:active {
 
     /* Sobre */
     .sobre-paragrafo {
-        font-size: 1rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         text-align: left;
     }
